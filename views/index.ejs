@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <form action="/uploadExcelFile" enctype="multipart/form-data" method="post">
+        <input type="file" name="uploadfile" accept=".xlsx, .xls">
+        <input type="submit" class="p-10 w-100" value="Upload Excel">
+    </form>
+
+    <hr>
+
+    <h2>Uploaded Candidates</h2>
+    <ul>
+        <% candidates.forEach(candidate => { %>
+            <li>
+                <strong><%= candidate.name %></strong>
+                <p>Email: <%= candidate.email %></p>
+                <p>Mobile No.: <%= candidate.mobileNo %></p>
+                <p>Date of Birth: <%= candidate.dateOfBirth %></p>
+                <!-- Add other fields as needed -->
+            </li>
+        <% }); %>
+    </ul>
+</body>
+
+</html>
